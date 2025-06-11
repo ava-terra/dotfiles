@@ -1,0 +1,78 @@
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+
+# general
+refresh-on-startup yes
+reload-threads 16
+prepopulate-query-feeds yes
+scrolloff 5
+text-width 50
+show-read-feeds no
+max-items 1000
+
+
+# key bindings
+# jk - move up/down
+unbind-key j
+unbind-key k
+bind-key j down
+bind-key k up
+
+# hl - move in/out of feeds/articles
+bind-key h quit
+bind-key l open
+
+# q quits the program
+unbind-key q
+bind-key q hard-quit
+
+# g/G to go to top/bottom
+unbind-key g
+unbind-key G
+bind-key g home
+bind-key G end
+
+# f to follow links (like qutebrowser)
+unbind-key f
+bind-key f goto-url
+
+
+
+#html-renderer "w3m -dump -T text/html" 
+#pager "w3m"
+
+player "mpv --no-audio-display"
+download-path "~/Downloads/"
+
+#browser "flatpak run com.brave.Browser --incognito %u > /dev/null 2>&1"
+browser "w3m %u"
+bookmark-cmd "~/bookmark"
+
+# colours
+color listnormal cyan default
+color listfocus black yellow standout bold
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article cyan default
+
+# highlight
+highlight article "^Feed:.*" color5 color0
+highlight article "^Title:.*" color3 color0 bold
+highlight article "^Author:.*" color2 color0
+highlight article "^Date:.*" color223 color0
+highlight article "^Link:.*" color4 color0
+highlight article "^Flags:.*" color9 color0
+highlight article "\\[[0-9][0-9]*\\]" color66 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color109 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
+
+# macros
+macro , open-in-browser -- "open url with link_handler.sh"
+macro t set browser "tsp yt-dlp --add-metadata -ic" ; open-in-browser ; set browser linkhandler
+macro a set browser "tsp yt-dlp --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser link_handler
+macro v set browser "setsid -f mpv" ; open-in-browser ; set browser "w3m %u"
+macro w set browser "w3m" ; open-in-browser ; set browser link_handler
+macro p set browser "dmenuhandler" ; open-in-browser ; set browser link_handler
+macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
+macro r set browser "ttrv" ; open-in-browser
+

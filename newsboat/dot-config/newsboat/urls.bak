@@ -1,0 +1,47 @@
+# queries
+"query:┌─unread:unread = \"yes\""
+"query:├─keywords:title =~ \"AfD|Brexit|Corona|COVID|Trump|Ukraine\""
+"query:│ ├─Afd:title =~ \"AfD\""
+"query:│ ├─Brexit:title =~ \"Brexit\""
+"query:│ ├─Corona:title =~ \"Corona|COVID\""
+"query:│ ├─Trump:title =~ \"Trump\""
+"query:│ └─Ukraine:title =~ \"Ukraine\""
+"query:├─all:tags != \"\""
+"query:│ ├─news:tags # \"news\""
+"query:│ │ ├─international:tags # \"news/international\""
+"query:│ │ └─local:tags # \"news/local\""
+"query:│ ├─tech:tags # \"tech\""
+"query:│ ├─linux:tags # \"linux\""
+"query:│ │ ├─reddit:tags # \"linux/reddit\""
+"query:│ │ └─suckless:tags # \"linux/suckless\""
+"query:│ ├─youtube:tags # \"youtube\""
+"query:│ │ ├─linux:tags # \"youtube/linux\""
+"query:│ │ └─science:tags # \"youtube/science\""
+"query:│ │ └─tech:tags # \"youtube/tech\""
+"query:│ └─podcast:tags # \"podcast\""
+"query:│   ├─dlf:tags # \"podcast/dlf\""
+"query:│   └─hr-iNFO:tags # \"podcast/hr-iNFO\""
+
+
+
+http://www.private-eye.co.uk/rss/rss.php
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCsiAKRKcgzA_372WbXNBaw youtube politics videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCF9IOB2TExg3QIBupFtBDxg youtube videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfhSB16X9MXhzSFe_H7XbHg "~Bryan Jenks" youtube videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA "~TJ DeVries" youtube youtube/linux
+
+
+https://joeroganexp.libsyn.com/rss
+
+https://rss.app/feeds/cFMwyZfCGLYaGW9R.xml "~Dan Bongino Videos" rumble videos
+https://feeds.megaphone.fm/WWO3519750118 "~Dan Bongino Podcasts" podcasts
+
+# news
+https://moxie.foxnews.com/google-publisher/latest.xml news/headlines
+https://moxie.foxnews.com/google-publisher/world.xml news/world
+https://moxie.foxnews.com/google-publisher/politics.xml news/politics
+https://moxie.foxnews.com/google-publisher/opinion.xml opinion
+https://moxie.foxnews.com/google-publisher/videos.xml videos
+
+https://rss.app/feeds/LqAgxKySugZIGhLf.xml

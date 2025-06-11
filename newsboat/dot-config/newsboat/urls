@@ -1,0 +1,222 @@
+# queries
+"query:┌─unread:unread = \"yes\""
+"query:├─keywords:title =~ \"AfD|Brexit|Corona|COVID|Trump|Ukraine\""
+"query:│ ├─Afd:title =~ \"AfD\""
+"query:│ ├─Brexit:title =~ \"Brexit\""
+"query:│ ├─Corona:title =~ \"Corona|COVID\""
+"query:│ ├─Trump:title =~ \"Trump\""
+"query:│ └─Ukraine:title =~ \"Ukraine\""
+"query:├─all:tags != \"\""
+"query:│ ├─news:tags # \"news\""
+"query:│ │ ├─international:tags # \"news/international\""
+"query:│ │ └─local:tags # \"news/local\""
+"query:│ ├─tech:tags # \"tech\""
+"query:│ ├─linux:tags # \"linux\""
+"query:│ │ ├─reddit:tags # \"linux/reddit\""
+"query:│ │ └─suckless:tags # \"linux/suckless\""
+"query:│ ├─youtube:tags # \"youtube\""
+"query:│ │ ├─linux:tags # \"youtube/linux\""
+"query:│ │ └─science:tags # \"youtube/science\""
+"query:│ │ └─tech:tags # \"youtube/tech\""
+"query:│ └─podcast:tags # \"podcast\""
+"query:│   ├─dlf:tags # \"podcast/dlf\""
+"query:│   └─hr-iNFO:tags # \"podcast/hr-iNFO\""
+"query:Save Democracy:content =~ \"save democracy\""
+
+
+http://www.huffingtonpost.com/feeds/verticals/green/index.xml "Environment"
+
+# Newspapers
+http://www.mirror.co.uk/rss.xml				! UK news tabloid
+http://www.mirror.co.uk/news/world-news/rss.xml		! UK news/international tabloid
+https://www.thesun.co.uk/news/uknews/feed		! UK news/local tabloid
+http://www.guardian.co.uk/rssfeed/0,,1,00.xml		! UK news broadsheet
+http://www.dailystar.co.uk/rss/1/Latest-News/		! UK news/headlines tabloid
+http://metro.co.uk/news/feed/				! UK news tabloid
+http://www.guardian.co.uk/media/dailymail/rss		! UK news broadsheet
+http://www.telegraph.co.uk/rss "~Telegraph"		! UK news broadsheet
+http://www.dailymail.co.uk/home/index.rss		! UK news broadsheet
+"query:Tabloids: tags # \"tabloid\""
+"query: Broadsheets: tags # \"broadsheet\""
+
+# NGOs
+http://feeds.feedburner.com/IaeaDgStatements		International org/ngo
+
+
+https://brownstone.org/?call_custom_simple_rss=1&csrp_thumbnail_size=400x300 "Covid"
+https://lockdownsceptics.org/feed/ "Covid"
+https://www.gov.uk/search/all.atom?level_one_taxon=5b7b9532-a775-4bd2-a3aa-6ce380184b6c&content_purpose_supergroup%5B%5D=guidance_and_regulation&content_purpose_supergroup%5B%5D=research_and_statistics&order=updated-newest "Covid"
+
+# Crypto
+http://feeds.feedburner.com/BitcoinMagazine			! crypto
+http://www.financemagnates.com/cryptocurrency/feed/		! crypto
+http://bitcoinexaminer.org/feed/				! crypto
+http://themerkle.com/feed/					! crypto
+http://cointelegraph.com/rss					! crypto
+http://www.reddit.com/r/Bitcoin/.rss				! crypto
+http://feeds.feedburner.com/BitcoinIndependentNewsAndBlog 	! crypto
+http://bitcoinist.net/feed/					! crypto
+http://feeds.feedburner.com/CoinDesk				! crypto
+"query: Crypto: tags # \"crypto\""
+
+# Markets 
+http://www.fool.com/About/headlines/rss_headlines.asp	markets 
+http://www.marketwatch.com/rss/topstories		markets
+
+http://feeds.feedburner.com/michaelhyatt "Improvement"
+http://feeds.feedburner.com/fastcompany/headlines "Improvement"
+
+# Gov
+http://data.parliamentlive.tv/api/event/feed "~Parliament Live TV"
+https://www.gov.uk/government/organisations/prime-ministers-office-10-downing-street.atom "~Prime Ministers Office" 
+
+http://www.legislation.gov.uk/new/data.feed "~New Legislation" gov/uk
+https://www.legislation.gov.uk/new/draft/data.feed "~New Draft Legislation" gov/uk
+https://www.gov.uk/search/news-and-communications.atom "~Government News & Communications" gov/uk
+https://www.legislation.gov.uk/new/ukdsi/data.feed "~UK Draft Statutory Instruments" gov/uk
+https://defradigital.blog.gov.uk/feed/atom/ "~Defra" gov/uk
+http://www.ons.gov.uk/releasecalendar?rss "~ONS Release Calendar" gov/uk
+https://hodigital.blog.gov.uk/feed/atom/ "~Home Office Digital" gov/uk
+https://www.gov.uk/government/organisations/foreign-commonwealth-development-office.atom "~Foreign Office" gov/uk
+
+# AI
+http://export.arxiv.org/api/query?search_query=au:+Bengio_Y&sortBy=lastUpdatedDate&sortOrder=descending&max_results=100 "Deep learning"
+http://export.arxiv.org/api/query?search_query=au:+Ng_A&sortBy=lastUpdatedDate&sortOrder=descending&max_results=100 "Deep learning"
+http://export.arxiv.org/api/query?search_query=au:+LeCun_Y&sortBy=lastUpdatedDate&sortOrder=descending&max_results=100 "Deep learning"
+http://www.machinedlearnings.com/feeds/posts/default "Deep learning"
+http://export.arxiv.org/api/query?search_query=au:+Mallat_S&sortBy=lastUpdatedDate&sortOrder=descending&max_results=100 "Deep learning"
+http://research.microsoft.com/apps/search/data.ashx?q=deep+learning&s=d "Deep learning"
+
+# Science & Tech
+http://www.huffingtonpost.com/feeds/verticals/technology/index.xml "Science & Technology"
+http://rss.slashdot.org/Slashdot/slashdot "Science & Technology"
+http://www.newscientist.com/feed.ns?index=online-news "Science & Technology"
+http://www.zdnet.com/news/rss.xml "Science & Technology"
+http://feeds.arstechnica.com/arstechnica/index/ "Science & Technology"
+http://www.sciam.com/xml/sciam.xml "Science & Technology"
+http://feeds.wired.com/wired/index "Science & Technology"
+http://feeds2.feedburner.com/IeeeSpectrum "Science & Technology"
+http://www.theregister.co.uk/excerpts.rss "Science & Technology"
+
+# Reddit feeds
+https://www.reddit.com/r/dataisbeautiful.rss data visualisation reddit/dataisbeautiful
+https://api.reddit.com/subreddit/Database database data reddit/database
+https://www.reddit.com/r/archlinux.rss linux/Arch reddit/Arch
+https://www.reddit.com/r/unixporn.rss linux/unixporn reddit/unixporn
+https://www.reddit.com/r/NixOS.rss linux/NixOS reddit/NixOS
+https://www.reddit.com/r/firefox.rss reddit/firefox
+https://www.reddit.com/r/mikrotik.rss reddit/mikrotik
+https://www.reddit.com/r/ProtonVPN.rss reddit/protonvpn privacy
+
+
+#
+http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches "Pwned"
+
+# CPD
+http://feeds.dzone.com/dzone/frontpage "CPD"
+http://www.davidco.com/master_rss "CPD"
+http://martinfowler.com/bliki/bliki.atom "CPD"
+
+
+# Lifestyle
+http://www.menshealth.com/events-promotions/washpofeed "Mens"
+https://melmagazine.com/feed "Mens"
+http://www.judiciary.gov.uk/judgments/feed/ "Courts"
+http://www.judiciary.gov.uk/announcements/feed/ "Courts"
+http://bmjopen.bmj.com/rss/recent.xml "Medical Publications"
+
+# Medical
+http://www.nature.com/nature/current_issue/rss "Medical Publications"
+https://www.thelancet.com/rssfeed/laninf_current.xml "Medical Publications"
+
+#
+http://www.instituteforgovernment.org.uk/feed/news "Oversight"
+
+#
+https://feed.theepochtimes.com/us/feed?_gl=1%2Azwpatk%2A_gcl_au%2AMTY1MTk5ODI2OS4xNjk4MjIyMTQy "US News
+http://libertynation.com/feed/ "US News"
+http://www.washingtonpost.com/wp-dyn/rss/politics/index.xml "US News"
+https://thehill.com/news/feed/ "US News"
+https://www.dailywire.com/feeds/rss.xml "Us News"
+https://rss.politico.com/politics-news.xml US news/politics
+https://nypost.com/feed/ US news
+#
+https://en.wikipedia.org/w/api.php?action=feedcontributions&user=Bon+courage&feedformat=atom "Wiki Editors"
+https://www.spiked-online.com/feed/ "! UK News"
+http://feeds.feedburner.com/breitbart "! UK News"
+http://feeds.feedburner.com/zerohedge/feed "! UK News"
+https://unherd.com/feed/ "! UK News"
+http://skwalker1964.wordpress.com/feed/ "! UK News"
+http://www.channel4.com/news/latest-news/rss "! UK News"
+http://feeds2.feedburner.com/guidofawkes "! UK News"
+http://news.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml "! UK News"
+http://news.sky.com/sky-news/rss/politics/rss.xml "! UK News"
+https://feeds.skynews.com/feeds/rss/politics.xml		news/politics
+https://feeds.skynews.com/feeds/rss/uk.xml			! UK news/local
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFQgi22Ht00CpaOQLtvZx2A ! UK news
+http://www.private-eye.co.uk/rss/rss.php			! UK news
+
+#
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCsiAKRKcgzA_372WbXNBaw "~Dr. Steve Turley" youtube politics videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCF9IOB2TExg3QIBupFtBDxg "~Dr. John Campbell" youtube videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfhSB16X9MXhzSFe_H7XbHg "~Bryan Jenks" youtube videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA "~TJ DeVries" youtube youtube/linux
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRoL9MBjGvkEH8UCYpyiBmA "~Free Speech Union" youtube videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsvUHa1A3lfloZqVxNd5uWw "~Sly Flourish" youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRUdudcEw4Uenxz-MAG7rGA "~ARC Forum" youtube
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1yBKRuGpC1tSM73A0ZjYjQ "TYT" youtube
+
+
+https://joeroganexp.libsyn.com/rss
+
+https://rss.app/feeds/cFMwyZfCGLYaGW9R.xml "~Dan Bongino Videos" rumble videos
+https://feeds.megaphone.fm/WWO3519750118 "~Dan Bongino Podcasts" podcasts
+
+# news
+https://moxie.foxnews.com/google-publisher/latest.xml news/headlines
+https://moxie.foxnews.com/google-publisher/world.xml news/world
+https://moxie.foxnews.com/google-publisher/politics.xml news/politics
+https://moxie.foxnews.com/google-publisher/opinion.xml opinion
+https://moxie.foxnews.com/google-publisher/videos.xml videos
+
+#
+https://www.winemakingtalk.com/forums/-/index.rss
+
+# New Scientist Feeds
+https://www.newscientist.com/section/news/feed/ news/science
+https://www.newscientist.com/subject/physics/feed/ physics
+https://www.newscientist.com/subject/technology/feed/ technology
+https://www.newscientist.com/subject/space/feed/ space
+https://www.newscientist.com/subject/life/feed/ life
+https://www.newscientist.com/subject/earth/feed/ earth
+https://www.newscientist.com/subject/health/feed/ health
+https://www.newscientist.com/subject/humans/feed/ humans
+
+# New York Times Feeds
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml news/world bias/l5
+https://rss.nytimes.com/services/xml/rss/nyt/US.xml news/US
+https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml news/technology
+https://rss.nytimes.com/services/xml/rss/nyt/Science.xml news/science
+https://rss.nytimes.com/services/xml/rss/nyt/Health.xml news/health
+https://rss.nytimes.com/services/xml/rss/nyt/Books/Review.xml news/books
+https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml news/politics
+
+https://www.reddit.com/r/ThoriumBrowser.rss
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeF7JKNXOy0jpMOxpgbZcpg "~OpenTechLab" youtube/linux
+
+https://www.supremecourt.gov/rss/cases/23-624.xml
+
+https://harvardharrispoll.com/feed
+
+https://judiciary.house.gov/rss.xml "~House Judiciary Committee"
+
+# Councils
+https://nwtc.org.uk/feed/ "~North Walsham Town Council" council/town
+
+# Local Papers
+https://eastangliabylines.co.uk/feed/
+https://kentandsurreybylines.co.uk/feed/
+
+https://www.northnorfolkconservatives.org.uk/news/feed news north norfolk conservatives
+https://www.northnorfolkconservatives.org.uk/events/feed events local north norfolk conservatives

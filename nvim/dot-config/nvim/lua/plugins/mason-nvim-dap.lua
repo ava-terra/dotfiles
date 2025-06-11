@@ -1,0 +1,17 @@
+---@type NvPluginSpec
+return {
+  "jay-babu/mason-nvim-dap.nvim",
+  -- ft = "python",
+  keys = {
+    { "<leader>d", desc = "Load DAP" },
+  },
+  dependencies = {
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio",
+  },
+  opts = {
+    ensure_installed = { "codelldb", "python", "delve" }, -- installs the debug adapters if not installed
+    handlers = {}, -- sets up dap in the predefined manner
+  },
+}
