@@ -36,6 +36,7 @@ if status is-interactive
   abbr la eza -la
   abbr cm chezmoi
   abbr md mkdir -p
+  abbr v nvim
 
   # Loop through all files in the ~/.config/fabric/patterns directory
   for pattern_file in $HOME/.config/fabric/patterns/*
@@ -90,6 +91,3 @@ else
 end
 # <<< conda initialize <<<
 
-abbr cm chezmoi
-abbr md mkdir -p
-abbr v nvim
