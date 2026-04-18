@@ -1,9 +1,8 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
+-- local lspconfig = require "lspconfig"
 
--- EXAMPLE
 local servers = {
   "bashls",
   "clangd",
@@ -16,17 +15,24 @@ local servers = {
   "svelte",
   "taplo",
 }
-local nvlsp = require "nvchad.configs.lspconfig"
+-- local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
+-- for _, lsp in ipairs(servers) do
+-- lspconfig[lsp].setup {
+-- vim.lsp.config[lsp].setup {
+-- on_attach = nvlsp.on_attach,
+-- on_init = nvlsp.on_init,
+-- capabilities = nvlsp.capabilities,
+-- }
+-- end
+--
+-- Enable servers (replaces lspconfig.setup)
+vim.lsp.enable(servers)
 
+vim.lsp.config.clangd = {
+  cmd = { "clangd", "--compile-commands-dir=." },
+}
 -- configuring single server, example: typescript
 -- lspconfig.tsserver.setup {
 --   on_attach = nvlsp.on_attach,
