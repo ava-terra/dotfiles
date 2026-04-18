@@ -1,15 +1,44 @@
----@type NvPluginSpec
+-- lua/plugins/platformio.lua
 return {
-  "anurag3301/nvim-platformio.lua",
+  {
+    "anurag3301/nvim-platformio.lua",
 
-  -- Dependencies are lazy-loaded by default unless specified otherwise.
-  dependencies = {
-    { "akinsho/toggleterm.nvim" },
-    { "nvim-telescope/telescope.nvim" },
-    { "nvim-telescope/telescope-ui-select.nvim" },
-    { "nvim-lua/plenary.nvim" },
-    { "folke/which-key.nvim" },
-    { "nvim-treesitter/nvim-treesitter" },
+    dependencies = {
+      "akinsho/toggleterm.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/which-key.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+
+    cmd = {
+      "Pioinit",
+      "Piorun",
+      "Piocmdh",
+      "Piocmdf",
+      "Piolib",
+      "Piomon",
+      "Piodebug",
+      "Piodb",
+    },
+
+    opts = {
+      lsp = "clangd", -- value: clangd | ccls
+      clangd_source = "ccls", -- value: ccls | compiledb
+      -- menu_key = "<leader>\\",
+      debug = false,
+    },
+
+    config = function(_, opts)
+      -- Set the global config first (as the plugin expects)
+      vim.g.pioConfig = opts
+
+      -- Then setup the plugin
+      local ok, platformio = pcall(require, "platformio")
+      if ok then
+        platformio.setup(vim.g.pioConfig)
+      end
+    end,
   },
-  cmd = { "Pioinit", "Piorun", "Piocmdh", "Piocmdf", "Piolib", "Piomon", "Piodebug", "Piodb" },
 }

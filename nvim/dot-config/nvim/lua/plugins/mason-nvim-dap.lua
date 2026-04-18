@@ -11,7 +11,9 @@ return {
     "nvim-neotest/nvim-nio",
   },
   opts = {
-    ensure_installed = { "codelldb", "python", "delve" }, -- installs the debug adapters if not installed
+    automatic_installation = true,
+
+    ensure_installed = { "codelldb", "python", "delve", "golang" }, -- installs the debug adapters if not installed
     handlers = {}, -- sets up dap in the predefined manner
   },
 }

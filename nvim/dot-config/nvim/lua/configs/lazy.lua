@@ -1,13 +1,15 @@
+-- lua/plugins/lazy.lua
 return {
   defaults = { lazy = true },
+
   install = { colorscheme = { "nvchad" } },
 
   ui = {
     icons = {
-      ft = "",
-      lazy = "󰂠 ",
-      loaded = "",
-      not_loaded = "",
+      ft = "", -- file type
+      lazy = "󰂠", -- lazy plugin
+      loaded = "", -- loaded
+      not_loaded = "", -- not loaded
     },
   },
 

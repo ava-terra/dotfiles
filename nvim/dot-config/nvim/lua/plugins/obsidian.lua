@@ -1,50 +1,56 @@
----@type NvPluginSpec
+-- lua/plugins/obsidian.lua
 return {
-  "epwalsh/obsidian.nvim",
-  version = "*", -- recommended
-  lazy = true,
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- recommended: use latest stable release
+    lazy = true,
 
-  cmd = {
-    "ObsidianNew",
-    "ObsidianToday",
-    "ObsidianYesterday",
-    "ObsidianTomorrow",
-    "ObsidianSearch",
-    "ObsidianQuickSwitch",
-    "ObsidianLink",
-    "ObsidianLinkNew",
-    "ObsidianBacklinks",
-    "ObsidianTags",
-    "ObsidianTemplate",
-    "ObsidianOpen",
-    "ObsidianWorkspace",
-    "ObsidianRename",
-    "ObsidianPasteImg",
-  },
+    cmd = {
+      "ObsidianNew",
+      "ObsidianToday",
+      "ObsidianYesterday",
+      "ObsidianTomorrow",
+      "ObsidianSearch",
+      "ObsidianQuickSwitch",
+      "ObsidianLink",
+      "ObsidianLinkNew",
+      "ObsidianBacklinks",
+      "ObsidianTags",
+      "ObsidianTemplate",
+      "ObsidianOpen",
+      "ObsidianWorkspace",
+      "ObsidianRename",
+      "ObsidianPasteImg",
+    },
 
-  keys = {
-    { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "Obsidian: New Note", mode = "n" },
-    { "<leader>ot", "<cmd>ObsidianToday<cr>", desc = "Obsidian: Today", mode = "n" },
-    { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: Backlinks", mode = "n" },
-    { "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "Obsidian: Search Vault", mode = "n" },
-    { "<leader>ol", "<cmd>ObsidianLinkNew<cr>", desc = "Obsidian: Link New Note", mode = "n" },
-  },
+    ft = "markdown",
 
-  ft = "markdown",
+    -- Uncomment this if you want to load Obsidian only inside your vaults
+    -- event = {
+    --   "BufReadPre ~/areas/pkm/main/*.md",
+    --   "BufReadPre ~/areas/norfolk_reform/*.md",
+    --   "BufNewFile ~/areas/pkm/main/*.md",
+    --   "BufNewFile ~/areas/norfolk_reform/*.md",
+    -- },
 
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
 
-  config = function()
-    require("obsidian").setup {
+    opts = {
       workspaces = {
-        { name = "main", path = "~/areas/pkm/main/" },
-        { name = "nnwn", path = "~/areas/norfolk_reform/" },
+        {
+          name = "main",
+          path = "~/areas/pkm/main/",
+        },
+        {
+          name = "nnwn",
+          path = "~/areas/norfolk_reform/",
+        },
       },
 
       templates = {
-        folder = "_config/template",
+        folder = "Templates", -- Make sure this folder exists in your vault
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
         substitutions = {},
@@ -74,15 +80,17 @@ return {
           end,
           opts = { noremap = false, expr = true, buffer = true },
         },
-
-        -- Smart action moved here (safer)
         ["<leader>oo"] = {
           action = function()
             return require("obsidian").util.smart_action()
           end,
-          opts = { buffer = true, desc = "Obsidian: Smart Action" },
+          opts = { buffer = true },
         },
       },
-    }
-  end,
+    },
+
+    config = function(_, opts)
+      require("obsidian").setup(opts)
+    end,
+  },
 }
