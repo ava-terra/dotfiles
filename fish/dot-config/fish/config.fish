@@ -1,6 +1,5 @@
 # Fish Shell Configuration File
-
-# set fish_greeting $TERM
+set fish_greeting $TERM
 
 # Environment variables
 set -gx EDITOR nvim
@@ -32,17 +31,14 @@ if status is-interactive
     # Abbreviations
     abbr mkcv pandoc cv-peter-colebourne.md -o (date +%Y-%m-%d)_cv.pdf \
         -V geometry:margin=2cm
-    abbr ls eza
     abbr cd z
-    abbr nv nvim
     abbr y yazi
-    #    abbr cat bat
     abbr m aerc
     abbr xc 'xclip --selection clip'
     abbr xco 'xclip -o -sel clip'
+    abbr ls eza
     abbr lt eza -lT
     abbr la eza -la
-    abbr cm chezmoi
     abbr md mkdir -p
     abbr v nvim
 
@@ -80,9 +76,12 @@ if status is-interactive
     # end
 
     # Integrations (checking they exist first)
-    if type -q fzf
-        fzf --fish | source
+    if type -q tv
+        tv init fish | source
     end
+    # if type -q fzf
+    #     fzf --fish | source
+    # end
     if type -q zoxide
         zoxide init fish | source
     end
