@@ -6,6 +6,8 @@ set -gx EDITOR nvim
 set -gx BROWSER firefox
 set -gx TERMINAL ghostty
 
+set -gx REPO_HOME ~/repo
+
 set -gx GOPATH ~/.local/go
 #set -gx GOROOT /usr/local/go
 #
@@ -76,12 +78,12 @@ if status is-interactive
     # end
 
     # Integrations (checking they exist first)
-    if type -q tv
-        tv init fish | source
-    end
     # if type -q fzf
     #     fzf --fish | source
     # end
+    if type -q tv
+        tv init fish | source
+    end
     if type -q zoxide
         zoxide init fish | source
     end
@@ -96,6 +98,8 @@ if status is-interactive
         end
     end
 end
+
+/home/monkey/.local/bin/mise activate fish | source # added by https://mise.run/fish
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

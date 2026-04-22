@@ -1,3 +1,5 @@
 .DS_Store
 .env
-plugins/
+television/dot-config/television/cable/
+tmux/dot-config/tmux/plugins/
+yazi/dot-config/yazi/plugins/

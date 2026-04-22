@@ -43,8 +43,9 @@
 # resize-overlay-duration = 4s 200ms
 #
 theme = catppuccin-frappe
-font-family = Hurmit Nerd Font Mono
+# font-family = Hurmit Nerd Font Mono
 background = #000000
 background-opacity = 0.85
 window-decoration = none
+mouse-hide-while-typing = true
 window-inherit-working-directory =
