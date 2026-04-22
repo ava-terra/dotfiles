@@ -48,4 +48,3 @@ background = #000000
 background-opacity = 0.85
 window-decoration = none
 mouse-hide-while-typing = true
-window-inherit-working-directory =
