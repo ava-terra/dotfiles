@@ -1,0 +1,10 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+[user]
+name = "Avad"
+email = "avad@avaterra.net"
+
+[aliases]
+ignore = [
+  'util', 'exec', '--', 'bash', '-c',
+  'jj config set --repo snapshot.auto-track "$(jj config get snapshot.auto-track) & ~$0" && jj file untrack $0'
+]
