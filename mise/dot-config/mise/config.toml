@@ -1,12 +1,12 @@
 [tools]
 bun = "1.4.4"
-go = "1.24.13"
+go = "1.27.3"
 java = "temurin-21.0.13+9.0.LTS"
 meson = "1.12.1"
 ninja = "1.13.2"
 node = "24.22.2"
-npm = "12.2.1"
+npm = "12.2.2"
 opencode = { version = "2.2.6", allow_builds = ["@opencode/cli"] }
 opentofu = "1.13.9"
-pipx = "1.18.12"
+pipx = "1.18.16"
 worktrunk = "0.81.0"
