@@ -5,3 +5,7 @@
 *.swp
 *.swo
 *~
+
+# fish universal variables: written by fish at runtime (set -U), machine-specific, and
+# contain paths that change between machines. Tracking them causes noisy diffs.
+fish/dot-config/fish/fish_variables

@@ -1,5 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/monkey/\x2eopencode/bin\x1e/home/monkey/\x2enpm\x2dglobal/bin\x1e/home/monkey/\x2elocal/anaconda3/condabin\x1e/home/monkey/\x2elocal/go/bin\x1e/home/monkey/\x2elocal/bin\x1e/home/monkey/\x2ecargo/bin\x1e/home/monkey/go/bin\x1e/home/monkey/\x2efzf/bin\x1e/home/monkey/go\x1eGOROOT\x1e/usr/local/go
-SETUVAR --export set:\x1d

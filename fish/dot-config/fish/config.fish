@@ -11,7 +11,6 @@ set -gx REPO_HOME ~/repo
 set -gx GOPATH ~/.local/go
 #set -gx GOROOT /usr/local/go
 #
-#set -gx CONDA_ROOT ~/.local/anaconda3
 set -gx CRYPTOGRAPHY_OPENSSL_NO_LEGACY 1
 
 # Binary search locations. These are prepended in order.  
@@ -100,16 +99,3 @@ if status is-interactive
 end
 
 /home/monkey/.local/bin/mise activate fish | source # added by https://mise.run/fish
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /home/monkey/.local/anaconda3/bin/conda
-    eval /home/monkey/.local/anaconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/home/monkey/.local/anaconda3/etc/fish/conf.d/conda.fish"
-        . "/home/monkey/.local/anaconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/home/monkey/.local/anaconda3/bin" $PATH
-    end
-end
-# <<< conda initialize <<<
