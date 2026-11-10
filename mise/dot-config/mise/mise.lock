@@ -51,6 +51,76 @@ url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.4/bun-windows-x
 checksum = "sha256:0f20ce6674d4f2dbcc8c5d59fdf99f7ba45f8c3b367e0f5781cbfa30a1c78d99"
 url = "https://github.com/oven-sh/bun/releases/download/bun-v1.4.4/bun-windows-x64-baseline.zip"
 
+[[tools.dagger]]
+version = "0.21.11"
+backend = "aqua:dagger/dagger"
+specifiers = ["0.21.11"]
+
+[tools.dagger."platforms.linux-arm64"]
+checksum = "sha256:7a19fc16ce58d8aa80e273629a38a3cf3e49951df8928b38a908805c9a08cc50"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013768"
+
+[tools.dagger."platforms.linux-arm64-musl"]
+checksum = "sha256:7a19fc16ce58d8aa80e273629a38a3cf3e49951df8928b38a908805c9a08cc50"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013768"
+
+[tools.dagger."platforms.linux-x64"]
+checksum = "sha256:a2d3ef96e7305abc18663a3606d9c1c592278ba3c8f48e01d6be14eef72276ef"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013771"
+
+[tools.dagger."platforms.linux-x64-baseline"]
+checksum = "sha256:a2d3ef96e7305abc18663a3606d9c1c592278ba3c8f48e01d6be14eef72276ef"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013771"
+
+[tools.dagger."platforms.linux-x64-musl"]
+checksum = "sha256:a2d3ef96e7305abc18663a3606d9c1c592278ba3c8f48e01d6be14eef72276ef"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013771"
+
+[tools.dagger."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:a2d3ef96e7305abc18663a3606d9c1c592278ba3c8f48e01d6be14eef72276ef"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013771"
+
+[tools.dagger."platforms.macos-arm64"]
+checksum = "sha256:58490db22e1d975f6e454955e605d0f90564517733528b18d65f4ad7929b6350"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013772"
+
+[tools.dagger."platforms.macos-x64"]
+checksum = "sha256:eacde97aeb3ee3a0c1c628d374dbb01a2303640f10bb6739e689c10442496bee"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013773"
+
+[tools.dagger."platforms.macos-x64-baseline"]
+checksum = "sha256:eacde97aeb3ee3a0c1c628d374dbb01a2303640f10bb6739e689c10442496bee"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013773"
+
+[tools.dagger."platforms.windows-x64"]
+checksum = "sha256:7afd2804cbc66463a31d6bddc79e93504e1b467cfc70773a040304e493951ea0"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_windows_amd64.zip"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013767"
+
+[tools.dagger."platforms.windows-x64-baseline"]
+checksum = "sha256:7afd2804cbc66463a31d6bddc79e93504e1b467cfc70773a040304e493951ea0"
+checksum_source = "mise-versions"
+url = "https://github.com/dagger/dagger/releases/download/v0.21.11/dagger_v0.21.11_windows_amd64.zip"
+url_api = "https://api.github.com/repos/dagger/dagger/releases/assets/664013767"
+
 [[tools.go]]
 version = "1.27.3"
 backend = "core:go"
@@ -153,6 +223,7 @@ url = "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0
 version = "1.12.1"
 backend = "pypi:meson"
 specifiers = ["1.12.1"]
+uv = { path = "locks/meson/1.12.1", digest = "sha256:ca8ff513de72df8077d631892de75fa16c8192ddc3680daffc97b9db97af2a68" }
 
 [[tools.ninja]]
 version = "1.13.2"
@@ -452,6 +523,153 @@ checksum = "sha256:bd3709947d3a36cb898f53c765aba568d01c1aef3302ec439037fcbbdad55
 checksum_source = "mise-versions"
 url = "https://github.com/pypa/pipx/releases/download/1.18.16/pipx.pyz"
 url_api = "https://api.github.com/repos/pypa/pipx/releases/assets/720080157"
+
+[[tools."pipx:ansible-core"]]
+version = "2.22.0"
+backend = "pipx:ansible-core"
+specifiers = ["2.22.0"]
+uv = { path = "locks/pipx-ansible-core/2.22.0", digest = "sha256:afffb2685e2d632887f8301640504c3fb41216752cabdcdc7a5c415ae0dcc759" }
+
+[[tools.terragrunt]]
+version = "1.2.1"
+backend = "aqua:gruntwork-io/terragrunt"
+specifiers = ["1.2.1"]
+
+[tools.terragrunt."platforms.linux-arm64"]
+checksum = "sha256:8b92d56a20b2848365e22ef94f963fbfe25fedeebcacffacbc286cfcf9966066"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670002309"
+
+[tools.terragrunt."platforms.linux-arm64-musl"]
+checksum = "sha256:8b92d56a20b2848365e22ef94f963fbfe25fedeebcacffacbc286cfcf9966066"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670002309"
+
+[tools.terragrunt."platforms.linux-x64"]
+checksum = "sha256:08c8844cc69e4f03451ebb8f347cb57d9bd6b8db7b16e437ae5ec6f001228ef9"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670001904"
+
+[tools.terragrunt."platforms.linux-x64-baseline"]
+checksum = "sha256:08c8844cc69e4f03451ebb8f347cb57d9bd6b8db7b16e437ae5ec6f001228ef9"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670001904"
+
+[tools.terragrunt."platforms.linux-x64-musl"]
+checksum = "sha256:08c8844cc69e4f03451ebb8f347cb57d9bd6b8db7b16e437ae5ec6f001228ef9"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670001904"
+
+[tools.terragrunt."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:08c8844cc69e4f03451ebb8f347cb57d9bd6b8db7b16e437ae5ec6f001228ef9"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670001904"
+
+[tools.terragrunt."platforms.macos-arm64"]
+checksum = "sha256:0aded323f844ce6567a15feb26393b67eff1400dc1722203fa4dd4e23b3bb182"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670001110"
+
+[tools.terragrunt."platforms.macos-x64"]
+checksum = "sha256:29806d1708f5c54e54bc6adfcacfb710d4bb1f6f180efd751692e6fad5985640"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670000649"
+
+[tools.terragrunt."platforms.macos-x64-baseline"]
+checksum = "sha256:29806d1708f5c54e54bc6adfcacfb710d4bb1f6f180efd751692e6fad5985640"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670000649"
+
+[tools.terragrunt."platforms.windows-x64"]
+checksum = "sha256:4393df92d7f6a0bdfd5744f069460a4886c6371b921cd4b1be03c186195dc05c"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_windows_amd64.exe.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670003102"
+
+[tools.terragrunt."platforms.windows-x64-baseline"]
+checksum = "sha256:4393df92d7f6a0bdfd5744f069460a4886c6371b921cd4b1be03c186195dc05c"
+checksum_source = "mise-versions"
+url = "https://github.com/gruntwork-io/terragrunt/releases/download/v1.2.1/terragrunt_windows_amd64.exe.tar.gz"
+url_api = "https://api.github.com/repos/gruntwork-io/terragrunt/releases/assets/670003102"
+
+[[tools.uv]]
+version = "0.13.7"
+backend = "aqua:astral-sh/uv"
+specifiers = ["0.13.7"]
+
+[tools.uv."platforms.linux-arm64"]
+checksum = "sha256:71279f8d3c67241e807b9d8db872d1bf541579fb9f08b7d1eb1682196d1e57dc"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009469"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-arm64-musl"]
+checksum = "sha256:2d3ec076a0c4c0e8250bb6418c44080828b544f1a3be0b6e46adf9fb6923de45"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009487"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64"]
+checksum = "sha256:c5221ff41b7892bfc223543883600125f6a47fe845093e0f5bdff4f359196d83"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009823"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-baseline"]
+checksum = "sha256:c5221ff41b7892bfc223543883600125f6a47fe845093e0f5bdff4f359196d83"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009823"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-musl"]
+checksum = "sha256:287491da03f2a785c70fa75b13e1f849918c2f2b5415fe84876b8214eeb792f9"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009859"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:287491da03f2a785c70fa75b13e1f849918c2f2b5415fe84876b8214eeb792f9"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009859"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-arm64"]
+checksum = "sha256:81b811b57e4624df7ed3aac148e0359100d9962f3d9dce00aec533dc2e086731"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009442"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64"]
+checksum = "sha256:20c47e4c1f630b8abaff8c291fa9b9aa300fef92c4fbff95adf198b55287cda7"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009775"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64-baseline"]
+checksum = "sha256:20c47e4c1f630b8abaff8c291fa9b9aa300fef92c4fbff95adf198b55287cda7"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009775"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64"]
+checksum = "sha256:0cdc5b38fe5a8168ed6a25814f5ba43c21d313dd3187314fccb37b7cec46e021"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009796"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64-baseline"]
+checksum = "sha256:0cdc5b38fe5a8168ed6a25814f5ba43c21d313dd3187314fccb37b7cec46e021"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/704009796"
+provenance = "github-attestations"
 
 [[tools.worktrunk]]
 version = "0.81.0"
