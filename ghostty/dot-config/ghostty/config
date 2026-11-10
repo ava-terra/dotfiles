@@ -42,7 +42,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 #
-theme = catppuccin-frappe
+theme = Catppuccin Frappe
 # font-family = Hurmit Nerd Font Mono
 background = #000000
 background-opacity = 0.85
