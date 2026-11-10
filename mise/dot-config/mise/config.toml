@@ -1,0 +1,9 @@
+[tools]
+"github:anomalyco/opencode" = "latest"
+meson = "latest"
+ninja = "latest"
+npm = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
+opentofu = "latest"
+pipx = "latest"
+worktrunk = "latest"
