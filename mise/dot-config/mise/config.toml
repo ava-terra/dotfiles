@@ -10,7 +10,6 @@ ninja = "1.13.2"
 node = "24.22.2"
 npm = "12.2.2"
 "pipx:ansible-core" = "2.22.0"
-opencode = { version = "2.2.6", allow_builds = ["@opencode/cli"] }
 opentofu = "1.13.9"
 pipx = "1.18.16"
 sops = "3.13.3"

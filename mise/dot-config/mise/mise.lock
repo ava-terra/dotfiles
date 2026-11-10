@@ -506,15 +506,6 @@ url = "https://registry.npmjs.org/npm/-/npm-12.2.2.tgz"
 checksum = "sha256:07fecbf753e2c3bc10ebeb3e9ed8738f6a0cc1292998b79e2e9f1dd2a5525e0c"
 url = "https://registry.npmjs.org/npm/-/npm-12.2.2.tgz"
 
-[[tools.opencode]]
-version = "2.2.6"
-aube = { path = "locks/opencode/2.2.6~009061c2", digest = "sha256:e28e5edefc4d4a5807f2f08163f8e4d2f952a5fc3d734dc5fabc62dd1a9fc869" }
-backend = "npm:@opencode/cli"
-specifiers = ["2.2.6"]
-
-[tools.opencode.options]
-allow_builds = '["@opencode/cli"]'
-
 [[tools.opentofu]]
 version = "1.13.9"
 backend = "aqua:opentofu/opentofu"
