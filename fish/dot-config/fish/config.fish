@@ -1,4 +1,9 @@
 # Fish Shell Configuration File
+# CachyOS aliases, greeting, and helpers. Loaded first so the settings below win.
+if test -f /usr/share/cachyos-fish-config/cachyos-config.fish
+    source /usr/share/cachyos-fish-config/cachyos-config.fish
+end
+
 set fish_greeting $TERM
 
 # Environment variables
