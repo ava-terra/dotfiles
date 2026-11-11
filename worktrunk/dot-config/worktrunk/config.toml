@@ -45,7 +45,7 @@
 # `~` expands to the home directory. Relative paths resolve from `repo_path`.
 #
 # worktree-path = "~/wt/{{ remote_repo }}.{{ branch | sanitize }}"
-worktree-path = "{{ repo_path }}/../{{ branch | sanitize }}"
+worktree-path = "{{ repo_path }}/../wt/{{ branch | sanitize }}"
 
 # ## LLM commit messages
 #
