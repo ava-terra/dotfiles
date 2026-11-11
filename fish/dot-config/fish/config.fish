@@ -18,6 +18,14 @@ set -gx GOPATH ~/.local/go
 #
 set -gx CRYPTOGRAPHY_OPENSSL_NO_LEGACY 1
 
+# Use gpg-agent's SSH socket as the SSH agent: it serves the YubiKey card
+# key and the keys KeePassXC adds when the database is unlocked. Leave
+# SSH_AUTH_SOCK alone when it is already set, e.g. a forwarded agent.
+if test -z "$SSH_AUTH_SOCK"
+    set -l gpg_ssh_socket "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
+    test -S "$gpg_ssh_socket"; and set -gx SSH_AUTH_SOCK "$gpg_ssh_socket"
+end
+
 # Binary search locations. These are prepended in order.  
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fish_add_path ~/.local/bin ~/.cargo/bin $GOPATH/bin
