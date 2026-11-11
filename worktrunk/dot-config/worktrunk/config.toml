@@ -249,3 +249,9 @@ command = "opencode run -m opencode-go/claude-haiku-5-5"
 # ## Hooks
 #
 # See `wt hook` (https://worktrunk.dev/hook/) for hook types, execution order, template variables, and examples. User hooks apply to all projects; project hooks (https://worktrunk.dev/config/#project-configuration) apply only to that repository.
+
+# Keep the Syncthing folder hosting the current directory from syncing git
+# state (.git and wt/ worktrees). Runs in the source worktree — or the bare
+# trunk, right after a merge — before any worktree is created.
+[pre-switch]
+stignore = "~/.local/bin/ensure-stignore"

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Keep the Syncthing folder hosting the current directory from syncing git state.
+# Installed by the dotfiles as a worktrunk user hook (~/.config/worktrunk/config.toml,
+# [pre-switch]); safe to run by hand from anywhere inside a synced folder.
+# Must never fail — a missing rule is not worth blocking a switch for.
+
+# Walk up from the working directory to the nearest Syncthing folder root
+# (marked by .stfolder). Repos outside any Syncthing folder — or machines not
+# running Syncthing at all — find nothing: exit quietly, having done nothing.
+root="$PWD"
+while [ "$root" != "/" ] && [ ! -d "$root/.stfolder" ]; do
+  root="$(dirname -- "$root")"
+done
+[ -d "$root/.stfolder" ] || exit 0  # no Syncthing folder above us
+
+stignore="$root/.stignore"
+[ -f "$stignore" ] || touch -- "$stignore" 2>/dev/null || exit 0
+
+rule() { # rule <pattern> <comment>
+  grep -qxF -- "$1" "$stignore" && return 0
+  printf '%s\n%s\n' "$2" "$1" >> "$stignore"
+}
+
+rule '.git' '// Git metadata stays local to each machine. Code moves through the git remote.'
+rule 'wt' '// Worktrunk worktrees are machine-local for the same reason: each machine
+// creates its own under wt/, and their git state does not resolve elsewhere.'
+
+exit 0
